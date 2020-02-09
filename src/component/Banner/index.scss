@@ -1,0 +1,40 @@
+.swiperWrap{
+    height: 660px;
+    width: '100%';
+}
+
+.swiperItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    margin:30px;
+    margin-top: 120PX;
+}
+
+.swiperItemBg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: blur(60px);
+}
+
+
+.swiperImg{
+    width: 690px;
+    height: 280px;
+    border-radius: 20px;
+}
+
+.swiperTitle{
+    font-size: 28px;
+    margin-top: 20px;
+    color: white;
+    font-weight: 600;
+}

@@ -1,0 +1,45 @@
+.searchBarWrap{
+    display: flex;
+    height: 44PX;
+    width: 750px;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+}
+
+.locationView{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+.locationText{
+    font-size: 36px;
+}
+
+.iconcaret-down{
+    font-size: 20px;
+}
+
+.iconsearch {
+    font-size: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.searchView{
+    display: flex;
+    align-items: center;
+    background-color: #ddd;
+    height: 60px;
+    width: 360px;
+    border-radius: 40px;
+    margin-left: 10px;
+}
+
+.searchText{
+    font-size: 24px;
+}
+

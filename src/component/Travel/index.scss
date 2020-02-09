@@ -1,0 +1,121 @@
+.travelWrap{
+    background-color: #fff;
+    border-radius:20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    position: relative;
+    z-index: 9999;
+}
+
+.travelList{
+    display: flex;
+    flex-direction: row;
+}
+
+.travelItemWrap{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.travelTitleText{
+    margin: 10px;
+    font-size: 34px;
+    color: #333;
+}
+
+.travelItem{
+    width: 335px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.travelImg{
+    width: 335px;
+    border-radius: 8px 8px 0 0;
+}
+
+.travelTitleView{
+    display: flex;
+    align-items: center;
+}
+
+.locatioonIcon{
+    font-size: 24px;
+    align-self: center;
+}
+
+.travelTitleView{
+    font-size: 26px;
+    color: #000;
+    margin-left: 10px;
+}
+
+.descText{
+    color: #999;
+    font-size: 26px;
+    line-height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    // 因为这个卡了我一下午？？？？
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+}
+
+.userAvatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.userName{
+    font-size: 26px;
+    color: #333;
+}
+
+.createTime{
+    font-size: 22px;
+    color: #999;
+}
+
+.likeIcon{
+    align-self: center;
+    font-size: 32px;
+}
+
+.likeCount{
+    font-size: 28px;
+    color: #333;
+    margin-left: 10px;
+}
+
+.bottomView{
+    margin-top: 10px;
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftView {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rightView {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.leftViewText{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}

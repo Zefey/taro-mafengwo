@@ -1,0 +1,38 @@
+
+
+.travelRouteWrap{
+    background-color: #fff;
+    border-radius:20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    position: relative;
+    z-index: 9999;
+}
+.travelRouteText{
+    margin: 10px;
+    font-size: 34px;
+    color: #333;
+}
+.routeList{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.routeView{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+.routeImg{
+    width: 325px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.routeText{
+    margin-top: 10px;
+    font-size: 26px;
+    color:#333;
+}
