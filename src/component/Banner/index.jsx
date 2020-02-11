@@ -17,20 +17,29 @@ class Banner extends Taro.Component {
             {
                 id:1,
                 img: "http://zefey.com/file/1580613191115.jpg",
-                title: "新年快乐"
+                title: "新年快乐",
+                url:'https://www.baidu.com/'
             },
             {
                 id:2,
                 img: "http://zefey.com/file/1580614986847.jpg",
-                title: "恭喜发财"
+                title: "恭喜发财",
+                url:'https://www.baidu.com/'
             },
             {
                 id:3,
                 img: "http://zefey.com/file/1580615570040.jpg",
-                title: "世界和平"
+                title: "世界和平",
+                url:'https://www.baidu.com/'
             }
         ]
     };
+
+    itemClick = (item) => {
+        Taro.navigateTo({
+            url: `/pages/webPage/index?url=${item.url}`
+        });
+    }
 
     render() {
         const { data } = this.state;
@@ -52,7 +61,7 @@ class Banner extends Taro.Component {
                     return (
                         <SwiperItem key={item.id}>
                             <View className="swiperItem" style={style}>
-                                <Image src={item.img} className="swiperImg"/>
+                                <Image src={item.img} className="swiperImg" onClick={()=>{this.itemClick(item);}}/>
                                 <Text className="swiperTitle">{item.title}</Text>
                             </View>
                             <View className="swiperItemBg" style={{backgroundImage:`url(${item.img})`}}/>

@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import { View } from "@tarojs/components";
+import { View,Text } from "@tarojs/components";
 import { connect } from "@tarojs/redux";
 
 import "./index.scss";
@@ -17,7 +17,7 @@ class QuickKnow extends Taro.Component {
         super(props);
         this.state = {
             data:[
-                {id:1,name:`${this.props.commonInfo.city}概况`},
+                {id:1,name:`概况`},
                 {id:2,name:'不容错过'},
                 {id:3,name:'重要城市'},
                 {id:4,name:'热门景点'},

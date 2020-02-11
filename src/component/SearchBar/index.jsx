@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import { View } from "@tarojs/components";
+import { View,Text } from "@tarojs/components";
 import { connect } from "@tarojs/redux";
 
 import "./index.scss";
@@ -41,16 +41,23 @@ class SearchBar extends Taro.Component {
         Taro.navigateBack();
     };
 
+    handleLocalSwitch = () => {
+        Taro.navigateTo({
+            url: "/pages/localSwitch/index"
+        });
+    }
+
     render() {
         const { scrollTop,commonInfo } = this.props;
         let style = {
             paddingTop: Taro.$statusBarHeight + "px",
             backgroundColor:`rgba(255,255,255,${scrollTop/300 || 0})`
         };
+        // console.log('scrollTop',scrollTop);
         return (
             <View className="searchBarWrap" style={style}>
-                <View className="locationView">
-                    <Text className="locationText">{commonInfo.city}</Text>
+                <View className="locationView" onClick={this.handleLocalSwitch}>
+                    <Text className="locationText">{commonInfo.locationCity}</Text>
                     <View className="iconfont iconcaret-down"/>
                 </View>
                 <View className="searchView">

@@ -48,3 +48,46 @@
     background-color: #ffdb53;
     align-self: center;
 }
+
+.moveWrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+}
+
+.moveView{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: #eee;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.userIcon{
+    font-size: 50px;
+}
+
+.userText{
+    margin-top: 5px;
+    font-size: 24px;
+    color: #333;
+}
+
+button {
+    padding:0;
+    line-height: 1;
+    background-color: transparent;
+}
+
+button::after {
+    border: none;
+}

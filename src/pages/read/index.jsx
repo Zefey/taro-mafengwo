@@ -24,7 +24,8 @@ class Read extends Component {
             {
                 id:1,
                 img: "http://zefey.com/file/1580614986847.jpg",
-                title: "恭喜发财"
+                title: "恭喜发财",
+                url:'https://www.baidu.com/'
             },
         ]
     }

@@ -25,12 +25,14 @@ class Destination extends Component {
             {
                 id:1,
                 img: "http://zefey.com/file/1580613191115.jpg",
-                title: "新年快乐"
+                title: "新年快乐",
+                url:'https://www.baidu.com/'
             },
             {
                 id:2,
                 img: "http://zefey.com/file/1580615570040.jpg",
-                title: "世界和平"
+                title: "世界和平",
+                url:'https://www.baidu.com/'
             }
         ]
     }

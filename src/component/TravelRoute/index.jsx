@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import { View } from "@tarojs/components";
+import { View,Text,Image } from "@tarojs/components";
 import { connect } from "@tarojs/redux";
 
 import "./index.scss";

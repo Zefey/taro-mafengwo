@@ -1,0 +1,71 @@
+.localSwitchWrap{
+    display: flex;
+    flex-direction: row;
+}
+
+.navView{
+    width: 25vw;
+    height: 100vh;
+    background-color: #eee;
+}
+
+.navItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navItemText{
+    padding:15px 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.contentView{
+    width: 75vw;
+    height: 100vh;
+    background-color: #fff;
+    padding:20px;
+}
+
+.cityTitle{
+    padding: 10px 20px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+.cityList{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cityText{
+    padding: 10px 20px;
+    margin: 10px 40px;
+    margin-left: 0;
+    background-color: #eee;
+    font-size: 30px;
+    color:#999;
+}
+
+.cityItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cityImg{
+    height: 120px;
+    width: 120px;
+    margin: 20px;
+}
+
+.cityText2{
+    margin-top: 10px;
+    font-size: 30px;
+    color:#aaa;
+}

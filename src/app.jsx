@@ -19,12 +19,16 @@ import 'taro-ui/dist/style/index.scss'
 
 const store = configStore()
 
+// 5c2e6371c4b7a118ce35fcc16bb6d602
+
 class App extends Component {
 
   config = {
     pages: [
       'pages/index/index',
       'pages/mine/index',
+      'pages/webPage/index',
+      'pages/localSwitch/index',
     ],
     window: {
       navigationStyle:'custom',
@@ -32,6 +36,11 @@ class App extends Component {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    permission: {
+      'scope.userLocation': {
+        desc: '小程序想要获取您的位置信息.'
+      }
     }
   }
 

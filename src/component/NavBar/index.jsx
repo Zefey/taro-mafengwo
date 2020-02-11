@@ -13,19 +13,22 @@ class Navbar extends Taro.Component {
     };
 
     render() {
-        const { showLeft = false } = this.props;
-        const style = {
-            paddingTop: Taro.$statusBarHeight + "px"
+        const { showLeft = false,title,style,textColor } = this.props;
+        const style1 = {
+            paddingTop: Taro.$statusBarHeight + "px",
+            ...style
         };
+        console.log('Navbar',title,showLeft);
         return (
-            <View className="navbarWrap" style={style}>
+            <View className="navbarWrap" style={style1}>
                 {showLeft && (
                     <View
                         className="iconfont iconleft navLeft"
+                        style={textColor && {color:textColor}}
                         onClick={this.clickHandler}
                     />
                 )}
-                <View className="title">{this.props.title}</View>
+                <View className="title" style={textColor && {color:textColor}}>{title}</View>
             </View>
         );
     }

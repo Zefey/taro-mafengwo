@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "myApp",
 	"description": "马蜂窝毕业设计",
-	"appid": "touristappid",
+	"appid": "wx5bd348ec3a45bb65",
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
