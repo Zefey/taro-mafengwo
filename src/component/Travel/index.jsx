@@ -1,127 +1,30 @@
 import Taro from "@tarojs/taro";
 import { View, Image, Text } from "@tarojs/components";
+import { connect } from "@tarojs/redux";
+import DateUtil from '../../util/dateUtil';
 
 import "./index.scss";
 
-class TabView extends Taro.Component {
+@connect(
+    ({ travel }) => ({
+        travel
+    }),
+    dispatch => ({
+    })
+)
+class Travel extends Taro.Component {
     static options = {
         addGlobalClass: true
     };
 
     constructor(props) {
         super(props);
-        this.state = {
-            data: []
-        };
+        let data = props.travel.data;
+        this.formatData(data);
     }
 
-    componentDidMount(){
-        let data = [
-            {
-                id: 1,
-                imgs: [
-                    "http://zefey.com/file/1580710492577.jpg",
-                    "http://zefey.com/file/1580710498675.jpg",
-                    "http://zefey.com/file/1580710505348.jpg"
-                ],
-                title:'牌坊街',
-                desc:'据黄梅岑先生《潮州牌坊纪略》载：“牌坊，传说可上溯唐宋，初以木建，形似‘乌凹肚门’。古时统治者提倡伦理道德，把城乡间于节义、功德、科第突出成就者，将其‘嘉德懿行’，书贴坊上旌表，称为‘表闾’，故牌坊也具纪念作用。到明时改用石砌，加叠层楼，饰以花纹，二柱一门或四柱三门，唯嘉靖时建多柱多门长牌坊”',
-                userAvatar:'http://zefey.com/file/1580710698566.jpeg',
-                userName:'什么鬼',
-                like:123,
-                createTime:'2019-12-12'
-            },
-            {
-                id: 2,
-                imgs: [
-                    "http://zefey.com/file/1580788025373.jpg",
-                ],
-                title:'啊啊啊啊',
-                desc:'什么鬼',
-                userAvatar:'http://zefey.com/file/1580710698566.jpeg',
-                userName:'什么鬼',
-                like:123,
-                createTime:'2019-12-12'
-            },
-            {
-                id: 3,
-                imgs: [
-                    "http://zefey.com/file/1580788025373.jpg",
-                ],
-                title:'啊啊啊啊',
-                desc:'啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊',
-                userAvatar:'http://zefey.com/file/1580710698566.jpeg',
-                userName:'什么鬼',
-                like:123,
-                createTime:'2019-12-12'
-            },
-            {
-                id: 4,
-                imgs: [
-                    "http://zefey.com/file/1580710492577.jpg",
-                    "http://zefey.com/file/1580710498675.jpg",
-                    "http://zefey.com/file/1580710505348.jpg"
-                ],
-                title:'牌坊街',
-                desc:'据黄梅岑先生《潮州牌坊纪略》载：“牌坊，传说可上溯唐宋，初以木建，形似‘乌凹肚门’。古时统治者提倡伦理道德，把城乡间于节义、功德、科第突出成就者，将其‘嘉德懿行’，书贴坊上旌表，称为‘表闾’，故牌坊也具纪念作用。到明时改用石砌，加叠层楼，饰以花纹，二柱一门或四柱三门，唯嘉靖时建多柱多门长牌坊”',
-                userAvatar:'http://zefey.com/file/1580710698566.jpeg',
-                userName:'什么鬼',
-                like:123,
-                createTime:'2019-12-12'
-            },
-            {
-                id: 5,
-                imgs: [
-                    "http://zefey.com/file/1580710492577.jpg",
-                    "http://zefey.com/file/1580710498675.jpg",
-                    "http://zefey.com/file/1580710505348.jpg"
-                ],
-                title:'牌坊街',
-                desc:'据黄梅岑先生《潮州牌坊纪略》载：“牌坊，传说可上溯唐宋，初以木建，形似‘乌凹肚门’。古时统治者提倡伦理道德，把城乡间于节义、功德、科第突出成就者，将其‘嘉德懿行’，书贴坊上旌表，称为‘表闾’，故牌坊也具纪念作用。到明时改用石砌，加叠层楼，饰以花纹，二柱一门或四柱三门，唯嘉靖时建多柱多门长牌坊”',
-                userAvatar:'http://zefey.com/file/1580710698566.jpeg',
-                userName:'什么鬼',
-                like:123,
-                createTime:'2019-12-12'
-            },
-            {
-                id: 6,
-                imgs: [
-                    "http://zefey.com/file/1580788025373.jpg",
-                ],
-                title:'啊啊啊啊',
-                desc:'什么鬼',
-                userAvatar:'http://zefey.com/file/1580710698566.jpeg',
-                userName:'什么鬼',
-                like:123,
-                createTime:'2019-12-12'
-            },
-            {
-                id: 7,
-                imgs: [
-                    "http://zefey.com/file/1580788025373.jpg",
-                ],
-                title:'啊啊啊啊',
-                desc:'啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊',
-                userAvatar:'http://zefey.com/file/1580710698566.jpeg',
-                userName:'什么鬼',
-                like:123,
-                createTime:'2019-12-12'
-            },
-            {
-                id: 8,
-                imgs: [
-                    "http://zefey.com/file/1580710492577.jpg",
-                    "http://zefey.com/file/1580710498675.jpg",
-                    "http://zefey.com/file/1580710505348.jpg"
-                ],
-                title:'牌坊街',
-                desc:'据黄梅岑先生《潮州牌坊纪略》载：“牌坊，传说可上溯唐宋，初以木建，形似‘乌凹肚门’。古时统治者提倡伦理道德，把城乡间于节义、功德、科第突出成就者，将其‘嘉德懿行’，书贴坊上旌表，称为‘表闾’，故牌坊也具纪念作用。到明时改用石砌，加叠层楼，饰以花纹，二柱一门或四柱三门，唯嘉靖时建多柱多门长牌坊”',
-                userAvatar:'http://zefey.com/file/1580710698566.jpeg',
-                userName:'什么鬼',
-                like:123,
-                createTime:'2019-12-12'
-            }
-        ];
+    componentWillReceiveProps(nextProps){
+        let data = nextProps.travel.data;
         this.formatData(data);
     }
 
@@ -144,6 +47,21 @@ class TabView extends Taro.Component {
         })
     }
 
+    goDeail = (data) => {
+        let param = this.Qs(data);
+        Taro.navigateTo({
+            url: `/pages/travelDetail/index?${param}`
+        });
+    }
+
+    Qs = (data) => {
+        let QsData = []
+        for (let key in data) {
+          QsData.push(`${key}=${data[key]}`)
+        }
+        return QsData = QsData.join('&')
+    }
+
     render() {
         const { data } = this.state;
         const { style } = this.props;
@@ -152,29 +70,29 @@ class TabView extends Taro.Component {
             <View className="travelWrap" style={style}>
                 <Text className="travelTitleText">正在旅行</Text>
                 <View className="travelList">
-                    {data.map((item1,index1)=>(
+                    {data && data.map((item1,index1)=>(
                         <View className="travelItemWrap" key={index1}>
                             {item1.map((item,index)=>{
                                 let [first] = item.imgs;
                                 return (
-                                    <View className="travelItem" key={item.id}>
+                                    <View className="travelItem" key={item.id} onClick={()=>{this.goDeail(item)}}>
                                         <Image className="travelImg" src={first} mode={'widthFix'}/>
-                                        <View className="travelTitleView">
+                                        <View className="travelTitleView1">
                                             <View className="iconfont iconlocation-fill locatioonIcon"/>
-                                            <Text className="travelTitle">{item.title}</Text>
+                                            <Text className="travelTitle">{item.location}</Text>
                                         </View>
-                                        <Text className="descText">{item.desc}</Text>
+                                        <Text className="descText">{item.content}</Text>
                                         <View className="bottomView">
                                             <View className="leftView">
-                                                <Image src={item.userAvatar} className="userAvatar"/>
+                                                <Image src={item.user_avatar} className="userAvatar"/>
                                                 <View className="leftViewText">
-                                                    <Text className="userName">{item.userName}</Text>
-                                                    <Text className="createTime">{item.createTime}</Text>
+                                                    <Text className="userName">{item.user_name}</Text>
+                                                    <Text className="createTime">{DateUtil.formatDate(item.time)}</Text>
                                                 </View>
                                             </View>
                                             <View className="rightView">
                                                 <View className="iconfont iconheart likeIcon"/>
-                                                <Text className="likeCount">{item.like}</Text>
+                                                <Text className="likeCount">{item.likes}</Text>
                                             </View>
                                         </View>
                                     </View>
@@ -187,4 +105,4 @@ class TabView extends Taro.Component {
         );
     }
 }
-export default TabView;
+export default Travel;

@@ -9,7 +9,8 @@ import TravelRoute from "../../component/TravelRoute";
 import Travel from "../../component/Travel";
 
 @connect(
-    ({ }) => ({
+    ({ banner }) => ({
+        banner
     }),
     dispatch => ({
         
@@ -44,13 +45,13 @@ class Destination extends Component {
     componentDidHide() {}
 
     render() {
-        const { bannerData } = this.state;
+        const { banner,quickKnow } = this.props;
         return (
             <View className="destination">
-                <Banner data={bannerData}/>
-                <QuickKnow style={{marginTop:'-8px'}}/>
+                <Banner data={banner.bannerData2}/>
+                <QuickKnow style={{marginTop:'-8px'}} data={quickKnow}/>
                 <TravelRoute/>
-                <Travel/>
+                <Travel />
             </View>
         );
     }

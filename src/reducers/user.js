@@ -1,9 +1,9 @@
-import { UPDATE_INFO } from '../constants/commonInfo'
+import { UPDATE_INFO } from '../constants/user'
 
 const INITIAL_STATE = {
 }
 
-export default function commonInfo (state = INITIAL_STATE, action) {
+export default function user (state = INITIAL_STATE, action) {
   switch (action.type) {
     case UPDATE_INFO:
       return {

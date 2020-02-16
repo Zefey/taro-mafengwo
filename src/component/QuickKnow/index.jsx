@@ -5,8 +5,8 @@ import { connect } from "@tarojs/redux";
 import "./index.scss";
 
 @connect(
-    ({ commonInfo }) => ({
-        commonInfo
+    ({ user }) => ({
+        user
     }),
     dispatch => ({
     })
@@ -15,17 +15,23 @@ class QuickKnow extends Taro.Component {
 
     constructor(props){
         super(props);
+        let data = props.data || [];
         this.state = {
-            data:[
-                {id:1,name:`概况`},
-                {id:2,name:'不容错过'},
-                {id:3,name:'重要城市'},
-                {id:4,name:'热门景点'},
-                {id:5,name:'人气美食'},
-                {id:6,name:'交通指南'},
-                {id:7,name:'实用信息'},
-            ]
+            data:data
         }
+    }
+
+    componentWillReceiveProps(nextProps){
+        let data = nextProps.data || [];
+        this.setState({
+            data:data
+        })
+    }
+
+    goQuickKnow = () => {
+        Taro.navigateTo({
+            url: `/pages/quickKnow/index`
+        });
     }
 
     render() {
@@ -37,7 +43,7 @@ class QuickKnow extends Taro.Component {
                 <View className="tagList">
                     {data.map((item,index)=>{
                         return (
-                            <View key={item.id} className="tagView">
+                            <View key={index} className="tagView" onClick={this.goQuickKnow}>
                                 <Text className="tagText">{item.name}</Text>
                             </View>
                         )

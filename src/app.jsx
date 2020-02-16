@@ -29,6 +29,11 @@ class App extends Component {
       'pages/mine/index',
       'pages/webPage/index',
       'pages/localSwitch/index',
+      'pages/search/index',
+      'pages/travelDetail/index',
+      'pages/addTravel/index',
+      'pages/searchLocal/index',
+      'pages/quickKnow/index',
     ],
     window: {
       navigationStyle:'custom',

@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux'
-import commonInfo from './commonInfo'
+import user from './user'
+import travel from './travel'
+import banner from './banner'
 
 export default combineReducers({
-  commonInfo
+  user,
+  travel,
+  banner,
 })

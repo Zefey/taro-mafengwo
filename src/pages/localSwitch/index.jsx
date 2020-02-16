@@ -1,15 +1,15 @@
 import Taro, { Component } from "@tarojs/taro";
 import { View, Button, Text } from "@tarojs/components";
 import { connect } from "@tarojs/redux";
-import { update } from "../../actions/commonInfo";
+import { update } from "../../actions/user";
 
 import NavBar from "../../component/NavBar";
 
 import "./index.scss";
 
 @connect(
-    ({ commonInfo }) => ({
-        commonInfo
+    ({ user }) => ({
+        user
     }),
     dispatch => ({
         update(data) {
@@ -18,44 +18,18 @@ import "./index.scss";
     })
 )
 class LocalSwitch extends Component {
-      config = {
-        navigationBarTitleText: "目的地切换"
-      };
+    //   config = {
+    //     navigationBarTitleText: "目的地切换"
+    //   };
 
     state = {
         current:0,
-        data:[
-            {
-                id:1,
-                name:'热门',
-                data:[
-                    {id:1,name:'北京',img:'http://zefey.com/file/1581431713491.jpg'},
-                    {id:2,name:'上海',img:'http://zefey.com/file/1581431713491.jpg'},
-                    {id:3,name:'广州',img:'http://zefey.com/file/1581431713491.jpg'},
-                    {id:4,name:'深圳',img:'http://zefey.com/file/1581431713491.jpg'},
-                    {id:5,name:'扬州',img:'http://zefey.com/file/1581431713491.jpg'},
-                ]
-            },
-            {
-                id:2,
-                name:'广东',
-                data:[
-                    {id:1,name:'广州',img:'http://zefey.com/file/1581431713491.jpg'},
-                    {id:2,name:'深圳',img:'http://zefey.com/file/1581431713491.jpg'},
-                    {id:3,name:'深圳',img:'http://zefey.com/file/1581431713491.jpg'},
-                    {id:4,name:'深圳',img:'http://zefey.com/file/1581431713491.jpg'},
-                ]
-            },
-            {
-                id:3,
-                name:'江苏',
-                data:[
-                    {id:1,name:'苏州',img:'http://zefey.com/file/1581431713491.jpg'},
-                    {id:2,name:'南京',img:'http://zefey.com/file/1581431713491.jpg'},
-                ]
-            },
-        ],
+        data:[],
 
+    }
+
+    componentDidMount(){
+        this.getLocationList();
     }
 
     componentWillReceiveProps(nextProps) {
@@ -68,8 +42,61 @@ class LocalSwitch extends Component {
 
     componentDidHide() {}
 
+    getLocationList = () => {
+        Taro.request({
+            url: "http://zefey.com:12345/mfw/locationList",
+            success: res => {
+                console.log('getLocationList',res);
+                let data = res.data.data;
+                let expect = [];
+                let hot = [];
+                let json = {};
+                for(let i=0;i<data.length;i++){
+                    if(data[i].type != 1){
+                        break;
+                    }
+                    if(data[i].hot){
+                        hot.push(data[i]);
+                    }
+                    if(data[i].pre_name){
+                        json[data[i].pre_name] = [];
+                    }
+                }
+                for(let i=0;i<data.length;i++){
+                    if(data[i].type != 1){
+                        break;
+                    }
+                    for(let key in json){
+                        if(data[i].pre_name == key){
+                            json[data[i].pre_name].push(data[i]);
+                        }
+                    }
+                }
+                expect= [
+                    {
+                        name:'热门',
+                        data:hot
+                    }
+                ];
+                for(let key in json){
+                    let temp = {};
+                    temp.name = key;
+                    temp.data = json[key];
+                    expect.push(temp);
+                }
+                this.setState({
+                    data:expect
+                })
+            },
+            fail: err => {
+                console.log("getLocationList err", err);
+            }
+        });
+    }
+
     switch = (city) => {
         this.props.update({
+            ...this.props.user,
             locationCity:city
         })
         Taro.navigateBack();
@@ -77,15 +104,18 @@ class LocalSwitch extends Component {
 
     render() {
         const { data,current } = this.state;
-        let cityList = data[current].data;
+        let cityList = [];
+        if(data && data.length >0){
+            cityList = data[current].data;
+        }
         return (
             <View className="localSwitch">
-                <NavBar title="目的地切换" showLeft={true}/>
+                <NavBar key={'localSwitch'} title="目的地切换" showLeft={true}/>
                 <View className="localSwitchWrap">
                     <View className="navView">
                         {data.map((item,index)=>{
                             return (
-                                <View key={item.id} className="navItem" style={index == current ? {backgroundColor:'#fff'} : {backgroundColor:'#eee'}} onClick={()=>{this.setState({current:index})}}>
+                                <View key={index} className="navItem" style={index == current ? {backgroundColor:'#fff'} : {backgroundColor:'#eee'}} onClick={()=>{this.setState({current:index})}}>
                                     <Text className="navItemText" >{item.name}</Text>
                                 </View>
                             )

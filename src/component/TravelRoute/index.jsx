@@ -5,8 +5,8 @@ import { connect } from "@tarojs/redux";
 import "./index.scss";
 
 @connect(
-    ({ commonInfo }) => ({
-        commonInfo
+    ({ user }) => ({
+        user
     }),
     dispatch => ({
     })

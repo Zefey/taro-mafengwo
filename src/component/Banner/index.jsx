@@ -9,31 +9,25 @@ class Banner extends Taro.Component {
         super(props);
         let data = props.data || [];
         this.state={
+            statusBarHeight:0,
             data:data
         }
     }
-    state = {
-        data: [
-            {
-                id:1,
-                img: "http://zefey.com/file/1580613191115.jpg",
-                title: "新年快乐",
-                url:'https://www.baidu.com/'
-            },
-            {
-                id:2,
-                img: "http://zefey.com/file/1580614986847.jpg",
-                title: "恭喜发财",
-                url:'https://www.baidu.com/'
-            },
-            {
-                id:3,
-                img: "http://zefey.com/file/1580615570040.jpg",
-                title: "世界和平",
-                url:'https://www.baidu.com/'
-            }
-        ]
-    };
+
+    componentDidMount(){
+        Taro.getSystemInfo().then((res) => {
+            this.setState({
+                statusBarHeight:res.statusBarHeight || 0
+            })
+        })
+    }
+
+    componentWillReceiveProps(nextProps){
+        let data = nextProps.data;
+        this.setState({
+            data
+        })
+    }
 
     itemClick = (item) => {
         Taro.navigateTo({
@@ -42,9 +36,9 @@ class Banner extends Taro.Component {
     }
 
     render() {
-        const { data } = this.state;
+        const { data,statusBarHeight } = this.state;
         const style = {
-            paddingTop: Taro.$statusBarHeight + "px",
+            paddingTop: (Taro.$statusBarHeight || statusBarHeight) + "px",
             
         };
         let length = data.length;

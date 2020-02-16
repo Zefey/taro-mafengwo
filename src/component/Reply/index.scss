@@ -1,0 +1,72 @@
+
+.replyItemView{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+}
+
+.replyUserAvatar{
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    margin: 5px 20px;
+}
+
+.replyInfoView{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.replyUserName{
+    font-size: 30px;
+    color: #000;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.replyUserTime{
+    font-size: 24px;
+    color: #999;
+}
+
+.replyContent{
+    font-size: 32px;
+    color: #333;
+}
+
+.replysWrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.replysView{
+    display: flex;
+    align-items: center;
+    background-color: #ddd;
+    height: 60px;
+    width: 500px;
+    border-radius: 40px;
+    margin-left: 10px;
+}
+
+.replysText{
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.replyTitle{
+    margin: 30px;
+    font-size: 32px;
+    color: #333;
+    font-weight: 600;
+    display: flex;
+}
+
+.sendText{
+    font-size: 30px;
+    margin: 20px;
+}

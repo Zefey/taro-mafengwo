@@ -16,3 +16,31 @@
     position: absolute;
     left: 40px;
 }
+
+.navRight{
+    position: absolute;
+    right: 220px;
+}
+
+.releaseBtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 140px;
+    border-radius: 30px;
+    border: 1px solid #3d3dff;
+}
+
+.releaseIcon{
+    font-size: 36px;
+    color:#3d3dff;
+    align-self: center;
+    margin: 5px;
+}
+
+.releaseText{
+    font-size: 28px;
+    color: #3d3dff;
+}

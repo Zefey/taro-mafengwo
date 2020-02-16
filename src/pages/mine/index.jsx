@@ -3,31 +3,18 @@ import { View, Button, Text } from "@tarojs/components";
 import { connect } from "@tarojs/redux";
 
 import NavBar from "../../component/NavBar";
+import DateUtil from "../../util/dateUtil";
 
 import "./index.scss";
 
 @connect(
-    ({ commonInfo }) => ({
-        commonInfo
+    ({ user }) => ({
+        user
     }),
     dispatch => ({
     })
 )
 class Mine extends Component {
-      config = {
-        navigationBarTitleText: "我的"
-      };
-
-    state = {
-        userId:'10001',
-        userAvatar:'http://zefey.com/file/1580710698566.jpeg',
-        userName:'什么鬼',
-        joinTime:'2020-01-28',
-        focus:0,
-        fans:0,
-        custom:0
-
-    }
 
     componentDidMount() {
         console.log("this.$router.params", this.$router.params);
@@ -43,19 +30,25 @@ class Mine extends Component {
 
     componentDidHide() {}
 
+    release = () => {
+        console.log('release');
+        Taro.navigateTo({
+            url: "/pages/addTravel/index"
+        });
+    }
+
     render() {
-        const { nickName,avatarUrl } = this.props.commonInfo;
-        const { userId,joinTime,focus,fans,custom,userName,userAvatar} = this.state;
+        const { nickName,avatarUrl,create_time,id,focus,fans,custom } = this.props.user;
         return (
             <View className="mine">
-                <NavBar title="个人中心" showLeft={true} style={{backgroundColor:'#555'}} textColor={'#fff'}/>
+                <NavBar key={'mine'} title="个人中心" showLeft={true} style={{backgroundColor:'#555'}} textColor={'#fff'}/>
                 <View className="userWrap">
                     <View className="userInfo">
                         <Image src={avatarUrl} className="userAvatar"/>
                         <View className="userTextWrap">
                             <Text className="userName">{nickName}</Text>
-                            <Text className="userId">UID:{userId}</Text>
-                            <Text className="userTime">{joinTime} 加入马蜂窝</Text>
+                            <Text className="userId">UID:{id}</Text>
+                            <Text className="userTime">{DateUtil.formatDate(create_time)} 加入马蜂窝</Text>
                         </View>
                     </View>
                     <View className="aboutView">
@@ -78,7 +71,7 @@ class Mine extends Component {
                         <Text className="travelTitle">旅行记录</Text>
                         <Text className="travelSubTitle">分享你的专属旅行记忆</Text>
                     </View>
-                    <View className="travelBtn">
+                    <View className="travelBtn" onClick={this.release}>
                         <Text className="travelBtnText">立即发布</Text>
                     </View>
                 </View>

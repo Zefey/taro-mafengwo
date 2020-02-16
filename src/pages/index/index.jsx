@@ -2,7 +2,9 @@ import Taro, { Component } from "@tarojs/taro";
 import { View, Button, Text, ScrollView,MovableArea,MovableView } from "@tarojs/components";
 import { connect } from "@tarojs/redux";
 
-import { update } from "../../actions/commonInfo";
+import { update } from "../../actions/user";
+import { getTravel } from "../../actions/travel";
+import { getBanner } from "../../actions/banner";
 import SearchBar from "../../component/SearchBar";
 import Read from "../read";
 import Destination from "../destination";
@@ -11,12 +13,18 @@ import "./index.scss";
 const QQMapWX = require('../../sdk/qqmap-wx-jssdk');
 
 @connect(
-    ({ commonInfo }) => ({
-        commonInfo
+    ({ user }) => ({
+        user
     }),
     dispatch => ({
         update(data) {
             dispatch(update(data));
+        },
+        getBanner(data) {
+            dispatch(getBanner(data));
+        },
+        getTravel(data) {
+            dispatch(getTravel(data));
         },
     })
 )
@@ -29,12 +37,14 @@ class Index extends Component {
         super(props);
         this.qqmapsdk = null;
         this.state = {
+            statusBarHeight:0,
             scrollTop: 0,
             tabViewData:[
                 {id:1,name:'推荐阅读'},
                 {id:2,name:'目的地'}
             ],
-            tabViewIndex:1
+            tabViewIndex:1,
+            quickKnow:[]
         };
     }
 
@@ -49,10 +59,24 @@ class Index extends Component {
         this.login();
         //定位
         this.location();
+        //获取系统参数
+        this.getSystemInfo();
     }
 
     componentWillReceiveProps(nextProps) {
-        // console.log(this.props, nextProps);
+        let localChange = this.props.user.locationCity !== nextProps.user.locationCity;
+        let nextCity = nextProps.user.locationCity;
+        if(localChange){
+            //地址改变,在这里更新一波数据
+            console.log('localChange',localChange,nextCity);
+            //banner数据
+            this.props.getBanner({type:1,location:nextCity});
+            this.props.getBanner({type:2,location:nextCity});
+            //travel数据
+            this.props.getTravel({location:nextCity});
+            //quick数据
+            this.getQuickKnowList(nextCity);
+        }
     }
 
     componentWillUnmount() {}
@@ -77,7 +101,7 @@ class Index extends Component {
                         },
                         success:  (res) => {
                             console.log('login res',res.data)
-                            this.props.update(res.data);
+                            this.props.update({...this.props.user,...res.data});
                         },
                         fail: (err) => {
                             console.log('login err',err)
@@ -104,18 +128,35 @@ class Index extends Component {
                       let {city} = result.result['ad_info'];
                       city = city.replace('市','');
                       this.props.update({
+                        ...this.props.user,
                         locationCity:city
                       })
+                      //banner数据
+                      this.props.getBanner({type:1,location:city});
+                      this.props.getBanner({type:2,location:city});
+                      //travel数据
+                      this.props.getTravel({location:city});
+                      //quick数据
+                      this.getQuickKnowList(city);
                     },
                     fail: (result)=> {
                       console.log('fail',result);
                       this.props.update({
+                        ...this.props.user,
                         locationCity:'定位失败',
                       })
                     }
                   })
             }
         }});
+    }
+
+    getSystemInfo = () => {
+        Taro.getSystemInfo().then((res) => {
+            this.setState({
+                statusBarHeight:res.statusBarHeight || 0
+            })
+        })
     }
 
     onScroll = e => {
@@ -132,21 +173,51 @@ class Index extends Component {
         })
     }
 
+    getQuickKnowList = (locationCity) => {
+        Taro.request({
+            url: "http://zefey.com:12345/mfw/quickKnowList",
+            data:{
+                location:locationCity
+            },
+            success: res => {
+                console.log('quickKnowList',res);
+                let data = res.data.data;
+                let expect = [];
+                let json = {};
+                for(let i=0;i<data.length;i++){
+                    if(data[i].big_title){
+                        json[data[i].big_title] = [];
+                    }
+                }
+                for(let key in json){
+                    let temp = {};
+                    temp.name = key;
+                    expect.push(temp);
+                }
+                this.setState({
+                    quickKnow:expect
+                })
+            },
+            fail: err => {
+                console.log("getLocationList err", err);
+            }
+        });
+    }
+
     bindGetUserInfo = (data) => {
         console.log('bindGetUserInfo',data);
         let userInfo = data.detail.userInfo;
-        this.props.update(userInfo);
+        this.props.update({...this.props.user,...userInfo});
         Taro.navigateTo({
             url: "/pages/mine/index"
         });
     }
 
     render() {
-        const { scrollTop,tabViewData,tabViewIndex } = this.state;
-        const { commonInfo } = this.props;
+        const { scrollTop,tabViewData,tabViewIndex,statusBarHeight,quickKnow } = this.state;
+        const { user } = this.props;
         const style = {
-            paddingTop: Taro.$statusBarHeight + "px",
-            
+            paddingTop: (Taro.$statusBarHeight || statusBarHeight) + "px",
         };
         return (
             <View>
@@ -154,7 +225,7 @@ class Index extends Component {
                     <MovableView className="moveView" direction='all' x={350} y={500}>
                         <Button openType='getUserInfo' onGetUserInfo={this.bindGetUserInfo}>
                             <View className="iconfont iconuser userIcon"/>
-                            <Text className="userText">{commonInfo.openid ? '我的' : '登录'}</Text>
+                            <Text className="userText">{user.openid ? '我的' : '登录'}</Text>
                         </Button>
                     </MovableView>
                 </MovableArea>
@@ -184,9 +255,9 @@ class Index extends Component {
                         })}
                     </View>
                     {tabViewIndex == 0 ?
-                    <Read />
+                    <Read key="Read" />
                     :
-                    <Destination />
+                    <Destination key="Destination" quickKnow={quickKnow}/>
                     }
                 </ScrollView>
             

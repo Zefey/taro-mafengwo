@@ -8,8 +8,8 @@ import Travel from "../../component/Travel";
 import "./index.scss";
 
 @connect(
-    ({  }) => ({
-        
+    ({ banner }) => ({
+        banner
     }),
     dispatch => ({
     })
@@ -37,10 +37,10 @@ class Read extends Component {
     componentDidHide() {}
 
     render() {
-        const {bannerData} = this.state;
+        const {banner,travelData} = this.props;
         return (
             <View className="read">
-                <Banner data={bannerData}/>
+                <Banner data={banner.bannerData1}/>
                 <Travel style={{marginTop:'-8px'}}/>
             </View>
         );

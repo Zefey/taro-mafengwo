@@ -1,0 +1,121 @@
+.travelTitleView{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+
+.titleText{
+    font-size: 28px;
+    color: #333;
+}
+
+.travelLocalView{
+    display: flex;
+    align-items: center;
+}
+
+.locatioonIcon{
+    font-size: 24px;
+    align-self: center;
+}
+
+.travelLocalTitle{
+    font-size: 26px;
+    color: #666;
+}
+
+.swiperImg{
+    width: 100%;
+}
+
+.travelContentWrap{
+    background-color: #fff;
+    padding:25px;
+}
+
+.travelContent{
+    font-size: 28px;
+    line-height: 50px;
+    color: #444;
+}
+
+.travelLocalView1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    border-radius: 20px;
+    height: 40px;
+    width: 150px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+.locatioonIcon1{
+    font-size: 24px;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.travelLocalTitle1{
+    font-size: 26px;
+    color: #666;
+}
+
+.travelLocal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    height: 30px;
+    width: 60px;
+    background-color:#d6d602;
+}
+
+.travelLocalText{
+    font-size: 28px;
+    color: #333;
+}
+
+.userInfoView{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-direction: row;
+}
+
+.userAvatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.userName{
+    font-size: 26px;
+    color: #333;
+}
+
+.createTime{
+    font-size: 22px;
+    color: #999;
+}
+.leftViewText{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.divLine{
+    background-color: #eee;
+    height: 2px;
+    margin: 0 20px;
+}
+
+.divLine2{
+    background-color: #eee;
+    height: 10px;
+    margin: 20px 0;
+}
