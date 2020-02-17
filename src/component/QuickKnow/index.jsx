@@ -37,6 +37,7 @@ class QuickKnow extends Taro.Component {
     render() {
         const { style } = this.props;
         const { data } = this.state;
+        console.log('quickKnow',data);
         return (
             <View className="quickKnowWrap" style={style}>
                 <Text className="quickKnowText">快速了解</Text>

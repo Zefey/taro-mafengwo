@@ -45,12 +45,12 @@ class Destination extends Component {
     componentDidHide() {}
 
     render() {
-        const { banner,quickKnow } = this.props;
+        const { banner,quickKnow,routeData } = this.props;
         return (
             <View className="destination">
                 <Banner data={banner.bannerData2}/>
                 <QuickKnow style={{marginTop:'-8px'}} data={quickKnow}/>
-                <TravelRoute/>
+                <TravelRoute data={routeData}/>
                 <Travel />
             </View>
         );

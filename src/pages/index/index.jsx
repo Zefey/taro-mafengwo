@@ -44,7 +44,8 @@ class Index extends Component {
                 {id:2,name:'目的地'}
             ],
             tabViewIndex:1,
-            quickKnow:[]
+            quickKnow:[],
+            routeData:[]
         };
     }
 
@@ -76,6 +77,8 @@ class Index extends Component {
             this.props.getTravel({location:nextCity});
             //quick数据
             this.getQuickKnowList(nextCity);
+            //route数据
+            this.getRouteList(nextCity);
         }
     }
 
@@ -138,6 +141,8 @@ class Index extends Component {
                       this.props.getTravel({location:city});
                       //quick数据
                       this.getQuickKnowList(city);
+                      //route数据
+                      this.getRouteList(city);
                     },
                     fail: (result)=> {
                       console.log('fail',result);
@@ -194,8 +199,53 @@ class Index extends Component {
                     temp.name = key;
                     expect.push(temp);
                 }
+                console.log('quickKnow expect',expect);
                 this.setState({
                     quickKnow:expect
+                })
+            },
+            fail: err => {
+                console.log("getLocationList err", err);
+            }
+        });
+    }
+
+    getRouteList = (locationCity) => {
+        Taro.request({
+            url: "http://zefey.com:12345/mfw/routeList",
+            data:{
+                location:locationCity
+            },
+            success: res => {
+                console.log('routeList',res);
+                let data = res.data.data;
+                let expect = [];
+                let json = {};
+                for(let i=0;i<data.length;i++){
+                    if(data[i].title){
+                        json[data[i].title] = [];
+                    }
+                }
+                for(let i=0;i<data.length;i++){
+                    for(let key in json){
+                        if(data[i].title == key){
+                            json[data[i].title].push(data[i]);
+                        }
+                    }
+                }
+                for(let key in json){
+                    let value = json[key];
+                    let [first] = value;
+                    let temp = {};
+                    if(first){
+                        temp = {...temp,...first};
+                    }
+                    temp.data = value;
+                    expect.push(temp);
+                }
+                console.log('expect111',expect);
+                this.setState({
+                    routeData:expect
                 })
             },
             fail: err => {
@@ -214,7 +264,7 @@ class Index extends Component {
     }
 
     render() {
-        const { scrollTop,tabViewData,tabViewIndex,statusBarHeight,quickKnow } = this.state;
+        const { scrollTop,tabViewData,tabViewIndex,statusBarHeight,quickKnow,routeData } = this.state;
         const { user } = this.props;
         const style = {
             paddingTop: (Taro.$statusBarHeight || statusBarHeight) + "px",
@@ -257,7 +307,7 @@ class Index extends Component {
                     {tabViewIndex == 0 ?
                     <Read key="Read" />
                     :
-                    <Destination key="Destination" quickKnow={quickKnow}/>
+                    <Destination key="Destination" quickKnow={quickKnow} routeData={routeData}/>
                     }
                 </ScrollView>
             

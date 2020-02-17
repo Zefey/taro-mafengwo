@@ -87,11 +87,15 @@ class Quick extends Component {
                 {data.map((item,index)=>{
                     return (
                         <View key={index}>
-                            <Text className="bigTitle">{item.title}</Text>
+                            <View className="bigTitle">
+                                <View className="titleBg"/>
+                                <Text >{item.title}</Text>
+                            </View>
                             {item.data.map((item1,index1)=>{
                                 return (
                                     <View key={item1.id}>
                                         <Text className="smallTitle">{item1.title}</Text>
+                                        {!!item1.img && <Image className="titleImg" src={item1.img}/>}
                                         <Text className="mainContent">{item1.content}</Text>
                                         <View className="divLine"/>
                                     </View>

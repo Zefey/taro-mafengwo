@@ -34,6 +34,7 @@ class App extends Component {
       'pages/addTravel/index',
       'pages/searchLocal/index',
       'pages/quickKnow/index',
+      'pages/routeDetail/index',
     ],
     window: {
       navigationStyle:'custom',
