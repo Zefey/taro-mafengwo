@@ -1,0 +1,26 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="travelWrap" style="{{anonymousState__temp}}"><text class="travelTitleText">正在旅行</text>
+        <view class="travelList">
+            <block wx:if="{{data}}">
+                <view class="travelItemWrap" wx:key="index1" wx:for="{{loopArray2}}" wx:for-item="item1" wx:for-index="index1">
+                    <view class="travelItem" wx:key="id" bindtap="anonymousFunc0" wx:for="{{item1.$anonymousCallee__0}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                        <image class="travelImg" src="{{item.first}}" mode="widthFix"></image>
+                        <view class="travelTitleView1">
+                            <view class="iconfont iconlocation-fill locatioonIcon"></view><text class="travelTitle">{{item.$original.location}}</text>
+                        </view><text class="descText">{{item.$original.content}}</text>
+                        <view class="bottomView">
+                            <view class="leftView">
+                                <image src="{{item.$original.user_avatar}}" class="userAvatar"></image>
+                                <view class="leftViewText"><text class="userName">{{item.$original.user_name}}</text><text class="createTime">{{item.$loopState__temp3}}</text>
+                                </view>
+                            </view>
+                            <view class="rightView">
+                                <view class="iconfont iconheart likeIcon"></view><text class="likeCount">{{item.$original.likes}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</block>

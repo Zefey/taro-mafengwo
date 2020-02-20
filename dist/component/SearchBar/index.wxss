@@ -1,0 +1,52 @@
+.searchBarWrap {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 44PX;
+  width: 750rpx;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 10000; }
+
+.locationView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10rpx;
+  margin-left: 30rpx; }
+
+.locationText {
+  font-size: 32rpx; }
+
+.iconcaret-down {
+  font-size: 20rpx; }
+
+.iconsearch {
+  font-size: 35rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx; }
+
+.searchView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ddd;
+  height: 60rpx;
+  width: 360rpx;
+  border-radius: 40rpx;
+  margin-left: 10rpx; }
+
+.searchText {
+  font-size: 24rpx; }
+

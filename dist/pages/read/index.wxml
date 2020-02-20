@@ -1,0 +1,6 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="read">
+        <banner compid="{{$compid__3}}"></banner>
+        <travel compid="{{$compid__4}}"></travel>
+    </view>
+</block>

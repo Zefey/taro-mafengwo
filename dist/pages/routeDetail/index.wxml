@@ -1,0 +1,32 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="route">
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__17}}"></nav-bar>
+        <image src="{{contentImg}}" class="contentImg"></image>
+        <view class="mainContent"><text class="titleText">{{title}}</text>
+            <view class="tagsWrapView">
+                <block wx:if="{{tags}}">
+                    <view wx:key="index" class="tagItem" wx:for="{{tags}}" wx:for-item="item" wx:for-index="index"><text class="tagText">{{item}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="routeWrapView"><text class="routeTitle">行程概览</text>
+            <view class="dayRouteWrap">
+                <block wx:if="{{data}}">
+                    <view class="dayRoute" wx:key="index" wx:for="{{data}}" wx:for-item="item" wx:for-index="index"><text class="routelocation">DAY{{index + 1}}·{{item.location}}</text><text class="routeTitle">DAY{{index + 1}}·{{item.location_title}}</text><text class="routeDesc">{{item.route}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="routeDetailView">
+            <block wx:if="{{data}}">
+                <view class="routeDetailItem" wx:key="index" wx:for="{{data}}" wx:for-item="item" wx:for-index="index">
+                    <view class="routeLocalView">
+                        <view class="iconfont iconlocation-fill locatioonIcon"></view><text class="routeLocalTitle">{{item.location}}</text>
+                    </view><text class="routeDetailTitle">DAY{{index + 1}}·{{item.location_title}}</text>
+                    <image class="routeDetailImg" src="{{item.location_img}}"></image><text class="routeDetailText">{{item.content}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+</block>

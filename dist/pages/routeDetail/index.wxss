@@ -1,0 +1,125 @@
+.contentImg {
+  width: 100%;
+  height: 300rpx; }
+
+.mainContent {
+  background-color: #efefef;
+  border-radius: 30rpx 30rpx 0 0;
+  width: 100%;
+  padding: 30rpx; }
+
+.titleText {
+  font-size: 36rpx;
+  color: #000;
+  font-weight: 600; }
+
+.tagsWrapView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.tagItem {
+  margin: 20rpx;
+  margin-left: 0; }
+
+.tagText {
+  font-size: 20rpx;
+  color: #66db66;
+  border: 1rpx solid #66db66;
+  padding: 2rpx 4rpx; }
+
+.routeWrapView {
+  background-color: #fff;
+  padding: 30rpx; }
+
+.routeTitle {
+  font-size: 28rpx;
+  color: #333;
+  margin: 10rpx 0; }
+
+.dayRouteWrap {
+  margin-top: 20rpx; }
+
+.dayRoute {
+  margin: 15rpx 0;
+  padding-left: 20rpx;
+  padding-bottom: 20rpx;
+  border-left: 1rpx solid #bbb;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.routelocation {
+  font-size: 22rpx;
+  color: #bbb;
+  font-weight: 500; }
+
+.routeTitle {
+  font-size: 28rpx;
+  color: #333; }
+
+.routeDesc {
+  font-size: 20rpx;
+  color: #bbb; }
+
+.routeLocalView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #333;
+  width: 120rpx;
+  height: 40rpx;
+  border-radius: 20rpx; }
+
+.locatioonIcon {
+  font-size: 24rpx;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  color: #fff; }
+
+.routeLocalTitle {
+  font-size: 24rpx;
+  color: #fff; }
+
+.routeDetailView {
+  background-color: #fff;
+  padding: 30rpx; }
+
+.routeDetailTitle {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  margin: 15rpx 0;
+  display: block; }
+
+.routeDetailImg {
+  margin: 10rpx 0;
+  width: 690rpx;
+  height: 250rpx; }
+
+.routeDetailText {
+  font-size: 30rpx;
+  color: #444; }
+
+.routeDetailItem {
+  margin: 20rpx 0; }
+

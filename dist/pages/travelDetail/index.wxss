@@ -1,0 +1,141 @@
+.travelTitleView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50rpx;
+  width: 100%; }
+
+.titleText {
+  font-size: 28rpx;
+  color: #333; }
+
+.travelLocalView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.locatioonIcon {
+  font-size: 24rpx;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center; }
+
+.travelLocalTitle {
+  font-size: 26rpx;
+  color: #666; }
+
+.swiperImg {
+  width: 100%; }
+
+.travelContentWrap {
+  background-color: #fff;
+  padding: 25rpx; }
+
+.travelContent {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  color: #444; }
+
+.travelLocalView1 {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1rpx solid #333;
+  border-radius: 20rpx;
+  height: 40rpx;
+  width: 150rpx;
+  background-color: #fff;
+  margin: 20rpx 0; }
+
+.locatioonIcon1 {
+  font-size: 24rpx;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  margin-right: 10rpx; }
+
+.travelLocalTitle1 {
+  font-size: 26rpx;
+  color: #666; }
+
+.travelLocal {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 15rpx;
+  height: 30rpx;
+  width: 60rpx;
+  background-color: #d6d602; }
+
+.travelLocalText {
+  font-size: 28rpx;
+  color: #333; }
+
+.userInfoView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10rpx 0;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.userAvatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx; }
+
+.userName {
+  font-size: 26rpx;
+  color: #333; }
+
+.createTime {
+  font-size: 22rpx;
+  color: #999; }
+
+.leftViewText {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 10rpx; }
+
+.divLine {
+  background-color: #eee;
+  height: 2rpx;
+  margin: 0 20rpx; }
+
+.divLine2 {
+  background-color: #eee;
+  height: 10rpx;
+  margin: 20rpx 0; }
+

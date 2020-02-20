@@ -1,0 +1,51 @@
+.travelRouteWrap {
+  background-color: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20rpx;
+  position: relative;
+  z-index: 9999; }
+
+.travelRouteText {
+  margin: 10rpx;
+  font-size: 34rpx;
+  color: #333; }
+
+.routeList {
+  width: 100%;
+  white-space: nowrap;
+  padding: 10rpx 20rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.routeView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 10rpx; }
+
+.routeImg {
+  width: 325rpx;
+  height: 180rpx;
+  border-radius: 10rpx; }
+
+.routeText {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #333; }
+
+.routeViewW {
+  display: inline-block; }
+

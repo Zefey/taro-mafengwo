@@ -1,0 +1,11 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="travelRouteWrap" style="{{anonymousState__temp}}"><text class="travelRouteText">行程路线</text>
+        <scroll-view class="routeList" scroll-with-animation="{{true}}" scroll-x="{{true}}">
+            <view class="routeViewW" wx:key="index" bindtap="anonymousFunc0" wx:for="{{loopArray4}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                <view class="routeView">
+                    <image class="routeImg" src="{{item.$original.titleImg}}"></image><text class="routeText">{{item.$original.title}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</block>

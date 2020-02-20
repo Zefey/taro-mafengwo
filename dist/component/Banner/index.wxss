@@ -1,0 +1,41 @@
+.swiperWrap {
+  height: 720rpx;
+  width: '100%'; }
+
+.swiperItem {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30rpx;
+  margin-top: 120PX; }
+
+.swiperItemBg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-filter: blur(60rpx);
+          filter: blur(60rpx); }
+
+.swiperImg {
+  width: 690rpx;
+  height: 280rpx;
+  border-radius: 20rpx; }
+
+.swiperTitle {
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  color: white;
+  font-weight: 600; }
+

@@ -1,0 +1,133 @@
+.textareaView {
+  background: #fff;
+  width: 690rpx;
+  min-height: 350rpx;
+  padding: 10rpx 30rpx; }
+
+.placeholder {
+  font-size: 30rpx;
+  color: #ddd; }
+
+.imgsWrapView {
+  width: 100%;
+  white-space: nowrap;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 180rpx;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.imgItemWrap {
+  display: inline-block; }
+
+.imgItemView {
+  height: 140rpx;
+  width: 140rpx;
+  border-radius: 10rpx;
+  margin: 10rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.imgItemBtn {
+  height: 140rpx;
+  width: 140rpx;
+  border-radius: 10rpx;
+  margin: 10rpx;
+  background-color: #eef;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1rpx solid #ccc; }
+
+.iconplus {
+  font-size: 40rpx; }
+
+.imgItem {
+  height: 140rpx;
+  width: 140rpx;
+  border-radius: 10rpx; }
+
+.imgItem1 {
+  height: 136rpx;
+  width: 136rpx;
+  border-radius: 10rpx; }
+
+.locationWrapView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10rpx 20rpx;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.locatioonIcon {
+  margin: 10rpx;
+  font-size: 34rpx; }
+
+.locationText {
+  font-size: 30rpx;
+  color: #000; }
+
+.rightIcon {
+  margin: 10rpx;
+  font-size: 34rpx; }
+
+.locationView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.bottomView {
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.timeText {
+  font-size: 28rpx;
+  color: #000;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  margin: 10rpx; }
+
+.downIcon {
+  font-size: 20rpx;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center; }
+

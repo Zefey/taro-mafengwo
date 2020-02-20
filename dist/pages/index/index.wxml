@@ -1,0 +1,35 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>
+        <movable-area class="moveWrap">
+            <movable-view class="moveView" direction="all" x="{{350}}" y="{{500}}">
+                <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+                    <view class="iconfont iconuser userIcon"></view><text class="userText">{{user.openid ? '我的' : '登录'}}</text>
+                </button>
+            </movable-view>
+        </movable-area>
+        <scroll-view class="index" bindscroll="onScroll" scroll-y="{{true}}" enable-back-to-top="{{true}}" scroll-with-animation="{{true}}">
+            <search-bar wx:key="anonymousState__temp" compid="{{$compid__0}}"></search-bar>
+            <view class="tabViewWrap" style="{{anonymousState__temp2}}">
+                <block wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+                    <block wx:if="{{index == tabViewIndex}}">
+                        <view class="tabViewItemActive"><text class="tabViewTextActive">{{item.$original.name}}</text>
+                            <view class="underline"></view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view wx:key="id" class="tabViewItem" bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text class="tabViewText">{{item.$original.name}}</text>
+                        </view>
+                    </block>
+                </block>
+            </view>
+            <block>
+                <block wx:if="{{tabViewIndex == 0}}">
+                    <read wx:key="Read" compid="{{$compid__1}}"></read>
+                </block>
+                <block wx:else>
+                    <destination wx:key="Destination" compid="{{$compid__2}}"></destination>
+                </block>
+            </block>
+        </scroll-view>
+    </view>
+</block>

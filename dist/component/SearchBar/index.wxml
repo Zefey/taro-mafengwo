@@ -1,0 +1,10 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="searchBarWrap" style="{{anonymousState__temp}}">
+        <view class="locationView" bindtap="handleLocalSwitch"><text class="locationText">{{user.locationCity}}</text>
+            <view class="iconfont iconcaret-down"></view>
+        </view>
+        <view class="searchView" bindtap="handleSearch">
+            <view class="iconfont iconsearch"></view><text class="searchText">搜索目的地/景点/攻略</text>
+        </view>
+    </view>
+</block>

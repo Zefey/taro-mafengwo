@@ -1,0 +1,26 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="mine">
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__8}}"></nav-bar>
+        <view class="userWrap">
+            <view class="userInfo">
+                <image src="{{avatarUrl}}" class="userAvatar"></image>
+                <view class="userTextWrap"><text class="userName">{{nickName}}</text><text class="userId">UID:{{id}}</text><text class="userTime">{{anonymousState__temp3}} 加入马蜂窝</text>
+                </view>
+            </view>
+            <view class="aboutView">
+                <view class="aboutItem"><text class="aboutText">{{focus}}</text><text class="aboutText">关注</text>
+                </view>
+                <view class="aboutItem"><text class="aboutText">{{fans}}</text><text class="aboutText">粉丝</text>
+                </view>
+                <view class="aboutItem"><text class="aboutText">{{custom}}</text><text class="aboutText">访客</text>
+                </view>
+            </view>
+        </view>
+        <view class="travelView">
+            <view class="travelTextView"><text class="travelTitle">旅行记录</text><text class="travelSubTitle">分享你的专属旅行记忆</text>
+            </view>
+            <view class="travelBtn" bindtap="release"><text class="travelBtnText">立即发布</text>
+            </view>
+        </view>
+    </view>
+</block>

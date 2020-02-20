@@ -1,0 +1,14 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="searchPage">
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__10}}"></nav-bar>
+        <view class="searchWrap">
+            <view class="searchView">
+                <view class="iconfont iconsearch"></view>
+                <input type="text" placeholder="搜索目的地/景点/攻略" class="searchText" focus="{{true}}" bindinput="onInput" />
+            </view><text class="cancelText" bindtap="cancel">取消</text>
+        </view>
+        <view wx:key="id" class="searchItem" bindtap="anonymousFunc0" wx:for="{{loopArray8}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+            <view class="dotView"></view><text class="searchItemText">{{item.$original.name}}</text>
+        </view>
+    </view>
+</block>

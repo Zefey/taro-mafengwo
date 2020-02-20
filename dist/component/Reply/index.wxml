@@ -1,0 +1,23 @@
+<block wx:if="{{$taroCompReady}}">
+    <view><text class="replyTitle">回复</text>
+        <view class="replysWrap">
+            <image src="{{avatarUrl || 'http://zefey.com/file/1581578380981.png'}}" class="replyUserAvatar"></image>
+            <view class="replysView">
+                <input value="{{replyContent}}" type="text" placeholder="发表你的见解" class="replysText" bindinput="onInput" />
+            </view>
+            <block>
+                <block wx:if="{{!!replyContent}}"><text class="sendText" style="{{anonymousState__temp}}" bindtap="reply">发送</text>
+                </block>
+                <block wx:else><text class="sendText" style="{{anonymousState__temp2}}" bindtap="reply">发送</text>
+                </block>
+            </block>
+        </view>
+        <view class="replyItemView" wx:key="id" wx:for="{{loopArray10}}" wx:for-item="item" wx:for-index="index">
+            <image src="{{item.$original.user_avatar || 'http://zefey.com/file/1581578380981.png'}}" class="replyUserAvatar"></image>
+            <view class="replyInfoView">
+                <view class="replyUserInfo"><text class="replyUserName">{{item.$original.user_name || '匿名用户'}}</text><text class="replyUserTime">{{item.$loopState__temp4}}</text>
+                </view><text class="replyContent">{{item.$original.content}}</text>
+            </view>
+        </view>
+    </view>
+</block>

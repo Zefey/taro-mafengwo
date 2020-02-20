@@ -1,0 +1,138 @@
+.mine {
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee; }
+
+.test {
+  width: 700rpx;
+  height: 50rpx;
+  background-color: red; }
+
+.userWrap {
+  width: 100%;
+  height: 400rpx;
+  background-color: #555;
+  border-radius: 0 0 100rpx 100rpx; }
+
+.userInfo {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50rpx; }
+
+.userAvatar {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 60rpx; }
+
+.userTextWrap {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 20rpx; }
+
+.userName {
+  font-size: 36rpx;
+  color: #fff; }
+
+.userId {
+  font-size: 26rpx;
+  color: #fff; }
+
+.userTime {
+  font-size: 26rpx;
+  color: #fff; }
+
+.travelView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -40rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+  height: 120rpx;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20rpx; }
+
+.travelTextView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.travelTitle {
+  font-size: 34rpx;
+  color: #333; }
+
+.travelSubTitle {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #999; }
+
+.travelBtn {
+  height: 60rpx;
+  width: 160rpx;
+  border-radius: 30rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e9e90d; }
+
+.travelBtnText {
+  color: #000;
+  font-size: 26rpx; }
+
+.aboutView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 40rpx; }
+
+.aboutItem {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.aboutText {
+  font-size: 32rpx;
+  color: #fff; }
+

@@ -1,0 +1,17 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="quick">
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__15}}"></nav-bar>
+        <view class="divLine1"></view>
+        <view wx:key="index" wx:for="{{data}}" wx:for-item="item" wx:for-index="index">
+            <view class="bigTitle">
+                <view class="titleBg"></view><text>{{item.title}}</text>
+            </view>
+            <view wx:key="id" wx:for="{{item.data}}" wx:for-item="item1" wx:for-index="index1"><text class="smallTitle">{{item1.title}}</text>
+                <block wx:if="{{!!item1.img}}">
+                    <image class="titleImg" src="{{item1.img}}"></image>
+                </block><text class="mainContent">{{item1.content}}</text>
+                <view class="divLine"></view>
+            </view>
+        </view>
+    </view>
+</block>

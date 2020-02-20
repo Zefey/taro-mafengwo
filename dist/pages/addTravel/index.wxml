@@ -1,0 +1,29 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="addTravel">
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__13}}"></nav-bar>
+        <textarea class="textareaView" value="{{content}}" maxlength="{{-1}}" placeholder="分享你的心情和故事吧~" placeholder-class="placeholder" bindinput="onInput"></textarea>
+        <scroll-view class="imgsWrapView" scroll-with-animation="{{true}}" scroll-x="{{true}}">
+            <view class="imgItemWrap" wx:for="{{imgs}}" wx:for-item="item" wx:for-index="index">
+                <view class="imgItemView">
+                    <image src="{{item}}" class="imgItem"></image>
+                </view>
+            </view>
+            <view class="imgItemWrap" bindtap="addImgs">
+                <view class="imgItemBtn">
+                    <image src="http://zefey.com/file/1581855859781.jpg" class="imgItem1"></image>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="locationWrapView" bindtap="chooseLocal">
+            <view class="locationView">
+                <view class="iconfont iconlocation-fill locatioonIcon"></view><text class="locationText">{{location || '添加拍摄地点'}}</text>
+            </view>
+            <view class="iconfont iconright rightIcon"></view>
+        </view>
+        <picker mode="date" bindchange="onDateChange">
+            <view class="bottomView"><text class="timeText">拍摄于 {{time}}</text>
+                <view class="iconfont iconcaret-down downIcon"></view>
+            </view>
+        </picker>
+    </view>
+</block>

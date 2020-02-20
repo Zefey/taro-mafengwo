@@ -1,0 +1,8 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="quickKnowWrap" style="{{anonymousState__temp}}"><text class="quickKnowText">快速了解</text>
+        <view class="tagList">
+            <view wx:key="index" class="tagView" bindtap="goQuickKnow" wx:for="{{data}}" wx:for-item="item" wx:for-index="index"><text class="tagText">{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+</block>
