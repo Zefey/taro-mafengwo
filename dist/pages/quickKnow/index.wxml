@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="quick">
-        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__45}}"></nav-bar>
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__16}}"></nav-bar>
         <view class="divLine1"></view>
         <view wx:key="index" wx:for="{{data}}" wx:for-item="item" wx:for-index="index">
             <view class="bigTitle">

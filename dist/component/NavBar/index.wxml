@@ -6,7 +6,7 @@
         <view class="title" style="{{anonymousState__temp3}}">{{title}}</view>
         <block wx:if="{{showRelease}}">
             <view class="navRight">
-                <view class="releaseBtn" style="{{anonymousState__temp4}}" bindtap="funPrivateezzzz">
+                <view class="releaseBtn" style="{{anonymousState__temp4}}" bindtap="funPrivatefzzzz">
                     <view class="iconfont iconcloud releaseIcon" style="{{anonymousState__temp5}}"></view><text class="releaseText" style="{{anonymousState__temp6}}">发布</text>
                 </view>
             </view>

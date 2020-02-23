@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="route">
-        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__46}}"></nav-bar>
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__17}}"></nav-bar>
         <image src="{{contentImg}}" class="contentImg"></image>
         <view class="mainContent"><text class="titleText">{{title}}</text>
             <view class="tagsWrapView">

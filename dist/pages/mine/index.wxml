@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="mine">
-        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__38}}"></nav-bar>
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__9}}"></nav-bar>
         <view class="userWrap">
             <view class="userInfo">
                 <image src="{{avatarUrl}}" class="userAvatar"></image>

@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="addTravel">
-        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__43}}"></nav-bar>
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__14}}"></nav-bar>
         <textarea class="textareaView" value="{{content}}" maxlength="{{-1}}" placeholder="分享你的心情和故事吧~" placeholder-class="placeholder" bindinput="onInput"></textarea>
         <scroll-view class="imgsWrapView" scroll-with-animation="{{true}}" scroll-x="{{true}}">
             <view class="imgItemWrap" wx:for="{{imgs}}" wx:for-item="item" wx:for-index="index">

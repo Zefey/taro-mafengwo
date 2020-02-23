@@ -12,7 +12,7 @@
                 </block>
             </block>
         </view>
-        <view class="replyItemView" wx:key="id" wx:for="{{loopArray10}}" wx:for-item="item" wx:for-index="index">
+        <view class="replyItemView" wx:key="id" wx:for="{{loopArray11}}" wx:for-item="item" wx:for-index="index">
             <image src="{{item.$original.user_avatar || 'http://zefey.com/file/1581578380981.png'}}" class="replyUserAvatar"></image>
             <view class="replyInfoView">
                 <view class="replyUserInfo"><text class="replyUserName">{{item.$original.user_name || '匿名用户'}}</text><text class="replyUserTime">{{item.$loopState__temp4}}</text>

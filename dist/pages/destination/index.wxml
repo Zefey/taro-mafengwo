@@ -1,8 +1,8 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="destination">
-        <banner compid="{{$compid__80}}"></banner>
-        <quick-know compid="{{$compid__81}}"></quick-know>
-        <travel-route compid="{{$compid__82}}"></travel-route>
-        <scenic compid="{{$compid__83}}"></scenic>
+        <banner compid="{{$compid__5}}"></banner>
+        <quick-know compid="{{$compid__6}}"></quick-know>
+        <travel-route compid="{{$compid__7}}"></travel-route>
+        <scenic compid="{{$compid__8}}"></scenic>
     </view>
 </block>

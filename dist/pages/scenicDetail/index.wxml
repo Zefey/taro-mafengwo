@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="scenic">
-        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__65}}"></nav-bar>
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__18}}"></nav-bar>
         <view class="scenicView"><text class="smallTitle">{{location}}·景点玩乐</text><text class="titleText">{{name}}</text>
             <view class="tagsWrapView">
                 <block wx:if="{{tags}}">
