@@ -59,7 +59,7 @@ var RouteDetail = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = RouteDetail.__proto__ || Object.getPrototypeOf(RouteDetail)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "$compid__17", "contentImg", "tags", "data", "title"], _this.customComponents = ["NavBar"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = RouteDetail.__proto__ || Object.getPrototypeOf(RouteDetail)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "$compid__16", "contentImg", "tags", "data", "title"], _this.customComponents = ["NavBar"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(RouteDetail, [{
@@ -97,10 +97,10 @@ var RouteDetail = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__17"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__16"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__17 = _genCompid2[0],
-          $compid__17 = _genCompid2[1];
+          $prevCompid__16 = _genCompid2[0],
+          $compid__16 = _genCompid2[1];
 
       var _$router$params = this.$router.params,
           title = _$router$params.title,
@@ -114,10 +114,10 @@ var RouteDetail = (_dec = (0, _redux.connect)(function (_ref) {
       _taroWeapp.propsManager.set({
         "title": title,
         "showLeft": true
-      }, $compid__17, $prevCompid__17);
+      }, $compid__16, $prevCompid__16);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
-        $compid__17: $compid__17,
+        $compid__16: $compid__16,
         contentImg: contentImg,
         tags: tags,
         data: data,

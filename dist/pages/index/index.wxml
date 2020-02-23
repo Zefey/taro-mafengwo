@@ -8,9 +8,9 @@
             </movable-view>
         </movable-area>
         <scroll-view class="index" bindscroll="onScroll" scroll-y="{{true}}" enable-back-to-top="{{true}}" scroll-with-animation="{{true}}">
-            <search-bar wx:key="anonymousState__temp" compid="{{$compid__0}}"></search-bar>
+            <search-bar wx:key="anonymousState__temp" compid="{{$compid__73}}"></search-bar>
             <view class="tabViewWrap" style="{{anonymousState__temp2}}">
-                <block wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+                <block wx:for="{{loopArray72}}" wx:for-item="item" wx:for-index="index" wx:key="id">
                     <block wx:if="{{index == tabViewIndex}}">
                         <view class="tabViewItemActive"><text class="tabViewTextActive">{{item.$original.name}}</text>
                             <view class="underline"></view>
@@ -24,10 +24,10 @@
             </view>
             <block>
                 <block wx:if="{{tabViewIndex == 0}}">
-                    <read wx:key="Read" compid="{{$compid__1}}"></read>
+                    <read wx:key="Read" compid="{{$compid__74}}"></read>
                 </block>
                 <block wx:else>
-                    <destination wx:key="Destination" compid="{{$compid__2}}"></destination>
+                    <destination wx:key="Destination" compid="{{$compid__75}}"></destination>
                 </block>
             </block>
         </scroll-view>

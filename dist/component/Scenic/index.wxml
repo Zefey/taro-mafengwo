@@ -1,0 +1,15 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="ScenicWrap" style="{{anonymousState__temp}}"><text class="ScenicText">热门景点</text>
+        <view class="scenicItemView" wx:key="index" bindtap="anonymousFunc0" wx:for="{{loopArray74}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+            <image class="scenicImg" src="{{item.$original.img}}"></image>
+            <view class="itemContent"><text class="routeText">{{item.$original.name}}</text>
+                <view class="tagsWrapView">
+                    <block wx:if="{{item.tags}}">
+                        <view wx:key="index1" class="tagItem" wx:for="{{item.tags}}" wx:for-item="item1" wx:for-index="index1"><text class="tagText">{{item1}}</text>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

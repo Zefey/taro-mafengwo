@@ -5,6 +5,7 @@ import { connect } from "@tarojs/redux";
 import { update } from "../../actions/user";
 import { getTravel } from "../../actions/travel";
 import { getBanner } from "../../actions/banner";
+import { getScenic } from "../../actions/scenic";
 import SearchBar from "../../component/SearchBar";
 import Read from "../read";
 import Destination from "../destination";
@@ -25,6 +26,9 @@ const QQMapWX = require('../../sdk/qqmap-wx-jssdk');
         },
         getTravel(data) {
             dispatch(getTravel(data));
+        },
+        getScenic(data) {
+            dispatch(getScenic(data));
         },
     })
 )
@@ -79,6 +83,8 @@ class Index extends Component {
             this.getQuickKnowList(nextCity);
             //route数据
             this.getRouteList(nextCity);
+            //scenic数据
+            this.props.getScenic({location:nextCity});
         }
     }
 
@@ -120,6 +126,7 @@ class Index extends Component {
     location = () => {
         Taro.getLocation({complete:(res)=>{
             console.log('getLocation',res);
+            console.log('qqmapsdk',this.qqmapsdk);
             if(this.qqmapsdk){
                 this.qqmapsdk.reverseGeocoder({
                     location: {
@@ -143,6 +150,8 @@ class Index extends Component {
                       this.getQuickKnowList(city);
                       //route数据
                       this.getRouteList(city);
+                      //scenic数据
+                      this.props.getScenic({location:city});
                     },
                     fail: (result)=> {
                       console.log('fail',result);

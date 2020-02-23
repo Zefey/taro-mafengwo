@@ -1,0 +1,63 @@
+
+
+.ScenicWrap{
+    background-color: #fff;
+    border-radius:20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    position: relative;
+    z-index: 9999;
+}
+.ScenicText{
+    margin: 10px;
+    font-size: 34px;
+    color: #333;
+}
+
+.tagsWrapView{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.tagItem{
+    margin: 20px;
+    margin-left: 0;
+    background-color: #66db66;
+}
+
+.tagText{
+    font-size: 20px;
+    color: #fff;
+    padding:4px 6px;
+}
+
+.scenicItemView{
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top:25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #efefef;
+}
+
+.scenicImg{
+    height: 150px;
+    width: 220px;
+    border-radius: 16px;
+}
+
+.routeText{
+    font-size: 32px;
+    color: #333;
+    font-weight: 500;
+}
+
+.itemContent{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}

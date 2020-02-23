@@ -1,0 +1,25 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="scenic">
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__65}}"></nav-bar>
+        <view class="scenicView"><text class="smallTitle">{{location}}·景点玩乐</text><text class="titleText">{{name}}</text>
+            <view class="tagsWrapView">
+                <block wx:if="{{tags}}">
+                    <view wx:key="index1" class="tagItem" wx:for="{{tags}}" wx:for-item="item1" wx:for-index="index1"><text class="tagText">{{item1}}</text>
+                    </view>
+                </block>
+            </view><text class="content">{{content}}</text><text class="midTitleText">景点玩乐详情</text>
+            <view class="detailViewWrap">
+                <view class="detailView">
+                    <view class="iconfont iconlocation locatioonIcon"></view><text class="detailText1">{{address}}</text>
+                </view>
+                <view class="navBtn" bindtap="navigate">
+                    <view class="iconfont iconcloud locatioonIcon"></view><text class="navText">导航</text>
+                </view>
+            </view>
+            <view class="detailView">
+                <view class="iconfont icontime-circle locatioonIcon"></view><text class="detailText1">开放时间  {{openTime}}</text>
+            </view>
+        </view>
+        <travel></travel>
+    </view>
+</block>

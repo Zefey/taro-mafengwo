@@ -1,22 +1,22 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="localSwitch">
-        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__9}}"></nav-bar>
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__39}}"></nav-bar>
         <view class="localSwitchWrap">
             <view class="navView">
-                <view wx:key="index" class="navItem" style="{{item.$loopState__temp3}}" bindtap="anonymousFunc0" wx:for="{{loopArray5}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text class="navItemText">{{item.$original.name}}</text>
+                <view wx:key="index" class="navItem" style="{{item.$loopState__temp3}}" bindtap="anonymousFunc0" wx:for="{{loopArray40}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text class="navItemText">{{item.$original.name}}</text>
                 </view>
             </view>
             <block>
                 <block wx:if="{{current == 0}}">
                     <view class="contentView"><text class="cityTitle">热门城市</text>
-                        <view class="cityList"><text class="cityText" wx:key="id" bindtap="anonymousFunc1" wx:for="{{loopArray6}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">{{item.$original.name}}</text>
+                        <view class="cityList"><text class="cityText" wx:key="id" bindtap="anonymousFunc1" wx:for="{{loopArray41}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">{{item.$original.name}}</text>
                         </view>
                     </view>
                 </block>
                 <block wx:else>
                     <view class="contentView">
                         <view class="cityList">
-                            <view class="cityItem" bindtap="anonymousFunc2" wx:for="{{loopArray7}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}">
+                            <view class="cityItem" bindtap="anonymousFunc2" wx:for="{{loopArray42}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}">
                                 <image src="{{item.$original.img}}" class="cityImg"></image><text class="cityText2">{{item.$original.name}}</text>
                             </view>
                         </view>

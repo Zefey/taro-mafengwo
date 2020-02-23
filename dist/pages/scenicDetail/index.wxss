@@ -1,0 +1,115 @@
+.scenicView {
+  padding: 30rpx; }
+
+.smallTitle {
+  display: block;
+  font-size: 22rpx;
+  color: #9c9c0e; }
+
+.titleText {
+  display: block;
+  font-size: 44rpx;
+  font-weight: 600;
+  color: #000; }
+
+.tagsWrapView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.tagItem {
+  margin: 20rpx;
+  margin-left: 0;
+  background-color: #66db66; }
+
+.tagText {
+  font-size: 20rpx;
+  color: #fff;
+  padding: 4rpx 6rpx; }
+
+.locatioonIcon {
+  font-size: 24rpx;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  margin: 10rpx; }
+
+.content {
+  display: block;
+  font-size: 25rpx;
+  color: #666;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  line-height: 45rpx; }
+
+.midTitleText {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx; }
+
+.detailViewWrap {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.detailView {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15rpx;
+  padding-left: 0; }
+
+.detailText1 {
+  font-size: 24rpx;
+  color: #666; }
+
+.detailText2 {
+  font-size: 24rpx;
+  color: #999; }
+
+.navBtn {
+  height: 50rpx;
+  width: 120rpx;
+  border-radius: 30rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1rpx solid #333; }
+
+.navText {
+  font-size: 26rpx;
+  color: #333; }
+

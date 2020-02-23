@@ -1,9 +1,9 @@
-(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["pages/destination/index"],{
+(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["pages/scenicDetail/index"],{
 
-/***/ "./src/pages/destination/index.jsx":
-/*!*****************************************!*\
-  !*** ./src/pages/destination/index.jsx ***!
-  \*****************************************/
+/***/ "./src/pages/scenicDetail/index.jsx":
+/*!******************************************!*\
+  !*** ./src/pages/scenicDetail/index.jsx ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28,7 +28,7 @@ var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 
 var _redux = __webpack_require__(/*! @tarojs/redux */ "./node_modules/@tarojs/redux/index.js");
 
-__webpack_require__(/*! ./index.scss */ "./src/pages/destination/index.scss");
+__webpack_require__(/*! ./index.scss */ "./src/pages/scenicDetail/index.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38,56 +38,88 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Destination = (_dec = (0, _redux.connect)(function (_ref) {
-  var banner = _ref.banner,
-      scenic = _ref.scenic;
+var QQMapWX = __webpack_require__(/*! ../../sdk/qqmap-wx-jssdk */ "./src/sdk/qqmap-wx-jssdk.js");
+
+var ScenicDetail = (_dec = (0, _redux.connect)(function (_ref) {
+  var user = _ref.user;
   return {
-    banner: banner,
-    scenic: scenic
+    user: user
   };
 }, function (dispatch) {
   return {};
 }), _dec(_class = (_temp2 = _class2 = function (_BaseComponent) {
-  _inherits(Destination, _BaseComponent);
+  _inherits(ScenicDetail, _BaseComponent);
 
-  function Destination() {
+  function ScenicDetail() {
     var _ref2;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, Destination);
+    _classCallCheck(this, ScenicDetail);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Destination.__proto__ || Object.getPrototypeOf(Destination)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "$compid__80", "$compid__81", "$compid__82", "$compid__83", "bannerData", "banner", "quickKnow", "routeData", "scenic"], _this.state = {
-      bannerData: [{
-        id: 1,
-        img: "http://zefey.com/file/1580613191115.jpg",
-        title: "新年快乐",
-        url: 'https://www.baidu.com/'
-      }, {
-        id: 2,
-        img: "http://zefey.com/file/1580615570040.jpg",
-        title: "世界和平",
-        url: 'https://www.baidu.com/'
-      }]
-    }, _this.customComponents = ["Banner", "QuickKnow", "TravelRoute", "Scenic"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ScenicDetail.__proto__ || Object.getPrototypeOf(ScenicDetail)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "$compid__65", "tags", "location", "name", "content", "address", "openTime"], _this.state = {
+      address: ''
+    }, _this.navigate = function () {
+      var _this$$router$params = _this.$router.params,
+          latitude = _this$$router$params.latitude,
+          longitude = _this$$router$params.longitude;
+
+      _taroWeapp2.default.openLocation({
+        latitude: parseFloat(latitude),
+        longitude: parseFloat(longitude),
+        scale: 18
+      });
+    }, _this.customComponents = ["NavBar", "Travel"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(Destination, [{
+  _createClass(ScenicDetail, [{
     key: "_constructor",
     value: function _constructor(props) {
-      _get(Destination.prototype.__proto__ || Object.getPrototypeOf(Destination.prototype), "_constructor", this).call(this, props);
+      _get(ScenicDetail.prototype.__proto__ || Object.getPrototypeOf(ScenicDetail.prototype), "_constructor", this).call(this, props);
 
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
 
-    //   config = {
-    //     navigationBarTitleText: "我的"
-    //   };
+      var _$router$params = this.$router.params,
+          latitude = _$router$params.latitude,
+          longitude = _$router$params.longitude;
+      //sdk初始化
 
+      this.qqmapsdk = new QQMapWX({
+        key: 'RM6BZ-57A3O-OUWWO-SRK3I-JWHI7-POBVT'
+      });
+      this.qqmapsdk.reverseGeocoder({
+        location: {
+          latitude: latitude,
+          longitude: longitude
+        },
+        success: function success(result) {
+          console.log('success', result);
+          _this2.setState({
+            address: result.result.address
+          });
+        },
+        fail: function fail(result) {
+          console.log('fail', result);
+          _this2.setState({
+            address: '定位失败'
+          });
+        }
+      });
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      console.log(this.props, nextProps);
+    }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {}
@@ -106,69 +138,50 @@ var Destination = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__80"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__65"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__80 = _genCompid2[0],
-          $compid__80 = _genCompid2[1];
+          $prevCompid__65 = _genCompid2[0],
+          $compid__65 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__81"),
-          _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__81 = _genCompid4[0],
-          $compid__81 = _genCompid4[1];
+      var _$router$params2 = this.$router.params,
+          name = _$router$params2.name,
+          location = _$router$params2.location,
+          tags = _$router$params2.tags,
+          content = _$router$params2.content,
+          openTime = _$router$params2.openTime;
+      var address = this.__state.address;
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__82"),
-          _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__82 = _genCompid6[0],
-          $compid__82 = _genCompid6[1];
-
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__83"),
-          _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__83 = _genCompid8[0],
-          $compid__83 = _genCompid8[1];
-
-      var _props = this.__props,
-          banner = _props.banner,
-          quickKnow = _props.quickKnow,
-          routeData = _props.routeData,
-          scenic = _props.scenic;
-
-      var anonymousState__temp = { marginTop: '-8px' };
+      tags = tags && tags.split(',');
+      var anonymousState__temp = 'scenic';
       _taroWeapp.propsManager.set({
-        "data": banner.bannerData2
-      }, $compid__80, $prevCompid__80);
-      _taroWeapp.propsManager.set({
-        "style": anonymousState__temp,
-        "data": quickKnow
-      }, $compid__81, $prevCompid__81);
-      _taroWeapp.propsManager.set({
-        "data": routeData
-      }, $compid__82, $prevCompid__82);
-      _taroWeapp.propsManager.set({
-        "data": scenic.data
-      }, $compid__83, $prevCompid__83);
+        "title": name,
+        "showLeft": true
+      }, $compid__65, $prevCompid__65);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
-        $compid__80: $compid__80,
-        $compid__81: $compid__81,
-        $compid__82: $compid__82,
-        $compid__83: $compid__83
+        $compid__65: $compid__65,
+        tags: tags,
+        location: location,
+        name: name,
+        content: content,
+        openTime: openTime
       });
       return this.__state;
     }
   }]);
 
-  return Destination;
-}(_taroWeapp.Component), _class2.$$events = [], _class2.$$componentPath = "pages/destination/index", _temp2)) || _class);
-exports.default = Destination;
+  return ScenicDetail;
+}(_taroWeapp.Component), _class2.$$events = ["navigate"], _class2.$$componentPath = "pages/scenicDetail/index", _temp2)) || _class);
+exports.default = ScenicDetail;
 
-Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(Destination));
+Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(ScenicDetail, true));
 
 /***/ }),
 
-/***/ "./src/pages/destination/index.scss":
-/*!******************************************!*\
-  !*** ./src/pages/destination/index.scss ***!
-  \******************************************/
+/***/ "./src/pages/scenicDetail/index.scss":
+/*!*******************************************!*\
+  !*** ./src/pages/scenicDetail/index.scss ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -176,4 +189,4 @@ Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/
 
 /***/ })
 
-},[["./src/pages/destination/index.jsx","runtime","vendors"]]]);
+},[["./src/pages/scenicDetail/index.jsx","runtime","vendors"]]]);

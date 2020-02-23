@@ -1,6 +1,6 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="travelDetail">
-        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__11}}"></nav-bar>
+        <nav-bar wx:key="anonymousState__temp" compid="{{$compid__41}}"></nav-bar>
         <view class="travelTitleView"><text class="titleText">你正在看</text>
             <view class="travelLocalView">
                 <view class="iconfont iconlocation-fill locatioonIcon"></view><text class="travelLocalTitle">{{location}}</text>
@@ -24,7 +24,7 @@
             </view>
         </view>
         <view class="divLine"></view>
-        <reply compid="{{$compid__12}}"></reply>
+        <reply compid="{{$compid__42}}"></reply>
         <view class="divLine2"></view>
         <travel></travel>
     </view>

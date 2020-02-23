@@ -93,7 +93,7 @@ var _App = function (_BaseComponent) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = _App.__proto__ || Object.getPrototypeOf(_App)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
-      pages: ['pages/index/index', 'pages/mine/index', 'pages/webPage/index', 'pages/localSwitch/index', 'pages/search/index', 'pages/travelDetail/index', 'pages/addTravel/index', 'pages/searchLocal/index', 'pages/quickKnow/index', 'pages/routeDetail/index'],
+      pages: ['pages/index/index', 'pages/mine/index', 'pages/webPage/index', 'pages/localSwitch/index', 'pages/search/index', 'pages/travelDetail/index', 'pages/addTravel/index', 'pages/searchLocal/index', 'pages/quickKnow/index', 'pages/routeDetail/index', 'pages/scenicDetail/index'],
       window: {
         navigationStyle: 'custom',
         backgroundTextStyle: 'light',
@@ -235,13 +235,58 @@ var _banner = __webpack_require__(/*! ./banner */ "./src/reducers/banner.js");
 
 var _banner2 = _interopRequireDefault(_banner);
 
+var _scenic = __webpack_require__(/*! ./scenic */ "./src/reducers/scenic.js");
+
+var _scenic2 = _interopRequireDefault(_scenic);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
   user: _user2.default,
   travel: _travel2.default,
-  banner: _banner2.default
+  banner: _banner2.default,
+  scenic: _scenic2.default
 });
+
+/***/ }),
+
+/***/ "./src/reducers/scenic.js":
+/*!********************************!*\
+  !*** ./src/reducers/scenic.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.default = scenic;
+
+var _scenic = __webpack_require__(/*! ../constants/scenic */ "./src/constants/scenic.js");
+
+var INITIAL_STATE = {
+  data: []
+};
+
+function scenic() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case _scenic.SCENIC_LIST:
+      return _extends({}, state, {
+        data: action.data
+      });
+    default:
+      return state;
+  }
+}
 
 /***/ }),
 
